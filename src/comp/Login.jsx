@@ -17,7 +17,7 @@ const Login = () => {
     const senddata = async () => {
 
         try {
-            const info = await fetch("http://localhost:10000/api/users/login", {
+            const info = await fetch("https://threads-clone-backend-2770.onrender.com/api/users/login", {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",

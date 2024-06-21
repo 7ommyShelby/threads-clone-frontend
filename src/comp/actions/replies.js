@@ -2,7 +2,7 @@ const token = localStorage.getItem('usertoken')
 
 async function reply(id){
     try {
-        const postreply = await fetch("http://localhost:10000/api/posts/reply/" + id, {
+        const postreply = await fetch("https://threads-clone-backend-2770.onrender.com/api/posts/reply/" + id, {
             method: "POST",
             headers: {
               Authorization: token,

@@ -24,7 +24,7 @@ const Screen = () => {
   const getfeeds = async () => {
 
     try {
-      const feeds = await fetch("http://localhost:10000/api/posts/feed", {
+      const feeds = await fetch("https://threads-clone-backend-2770.onrender.com/api/posts/feed", {
         method: "GET",
         headers: {
           Authorization: token,

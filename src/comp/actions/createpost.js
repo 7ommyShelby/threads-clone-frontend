@@ -3,7 +3,7 @@ const token = localStorage.getItem('usertoken')
 const createpost = async (user, text) => {
 
     try {
-        const post = await fetch("http://localhost:10000/api/posts/create", {
+        const post = await fetch("https://threads-clone-backend-2770.onrender.com/api/posts/create", {
             method: "POST",
             headers: {
                 Authorization: token,

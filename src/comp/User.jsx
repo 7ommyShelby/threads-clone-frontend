@@ -16,7 +16,7 @@ const User = () => {
     const getuser = async () => {
 
         try {
-            const user = await fetch('http://localhost:10000/api/users/userinfo', {
+            const user = await fetch('https://threads-clone-backend-2770.onrender.com/api/users/userinfo', {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -39,7 +39,7 @@ const User = () => {
     async function getpost(id) {
 
         try {
-            const userpost = await fetch("http://localhost:10000/api/posts/userposts/" + id, {
+            const userpost = await fetch("https://threads-clone-backend-2770.onrender.com/api/posts/userposts/" + id, {
                 method: "GET",
                 headers: {
                     Authorization: token,
@@ -122,7 +122,7 @@ const User = () => {
 
                         ) : (
                             <>
-                            <div className='min-h-80'>
+                            <div className='min-h'>
                                 <h1>Write some threads....</h1>
                             </div>
                             </>

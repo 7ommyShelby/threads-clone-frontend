@@ -4,7 +4,7 @@ const token = localStorage.getItem('usertoken');
 async function like(id) {
 
     try {
-      const likedislike = await fetch("http://localhost:10000/api/posts/like/" + id, {
+      const likedislike = await fetch("https://threads-clone-backend-2770.onrender.com/api/posts/like/" + id, {
         method: "POST",
         headers: {
           Authorization: token,
