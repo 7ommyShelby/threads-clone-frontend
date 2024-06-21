@@ -79,7 +79,8 @@ const User = () => {
     }, [])
 
     return (
-        <>
+        <> {
+            Object.keys(user).length !=0 && (
             <main className=' text-white'>
                 <section className='p-4'>
                     <div className="profile w-full px-4 py-6 flex gap-4 justify-between items-center">
@@ -149,8 +150,8 @@ const User = () => {
                     }
                 </section>
             </main>
-
-
+            )
+        }
         </>
     )
 }
