@@ -1,0 +1,109 @@
+.pages ul li{
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px;
+    transition: all .2s ease-out;
+    
+}
+
+.pages ul li:hover{
+   background-color: rgb(46, 46, 46);
+   border-radius: 10px;
+}
+
+.con{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.con::-webkit-scrollbar{
+    display: none;
+}
+
+.loginpage{
+    background-image: url('../assets/jxB9GUOHTf2.webp');
+    background-position:top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.form input{
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #1E1E1E;
+    width: 100%;
+    color: #ffffff;
+}
+.form button{
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ffffff;
+    width: 100%;
+}
+.signupdiv{
+    border-radius: 15px;
+    border: 1px solid #464646;
+}
+.signuppage form input{
+    border-radius: 10px;
+}
+
+.right .photo{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #464646
+}
+.photo img{
+    height: 100%;
+    width : 100%;
+    object-fit: cover;
+}
+
+.homescreen{
+    border-radius: 20px;
+    background-color: #181818;
+    border: 1px solid rgba(245, 245, 245, 0.201);
+    overflow: hidden; 
+}
+
+.editpro{
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.252);
+    padding: 5px;
+}
+
+.feedpic{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.feedpic img{
+    height: 100%;
+    width : 100%;
+    object-fit: cover;
+}
+.options ul li {
+    display:  flex;
+    gap: 5px;
+    align-items: center;
+    font-weight: 300;
+}
+.userpost{
+    height: 350px;
+    overflow-y: scroll;
+}
+.feeds::-webkit-scrollbar{
+    display: none;
+}
+.userpost::-webkit-scrollbar{
+    display: none;
+}
