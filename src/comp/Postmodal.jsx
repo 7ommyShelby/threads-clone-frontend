@@ -4,13 +4,12 @@ import createpost from "./actions/createpost";
 
 
 
-
 export default function Modal() {
 
   const user = JSON.parse(localStorage.getItem('user'))
 
   const [text, settext] = React.useState("")
-  
+
   const [showModal, setShowModal] = React.useState(false);
 
   return (
@@ -42,6 +41,7 @@ export default function Modal() {
                     <img src={photo} alt="" />
                   </div>
                   <input onChange={(e) => {
+                    
                     settext(e.target.value)
                   }}
                     type="text"

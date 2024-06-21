@@ -10,6 +10,7 @@ import photo from '../assets/opp.jpg'
 import like from '../comp/actions/likehandler'
 import Modal from './Postmodal';
 import reply from '../comp/actions/replies'
+import Profile from './Profile';
 
 
 
@@ -17,9 +18,7 @@ import reply from '../comp/actions/replies'
 const Screen = () => {
   const token = localStorage.getItem("usertoken")
   const dispatch = useDispatch()
-  // const userfeeds = useSelector((state) => state.userfeeds)
-
-  const [userfeeds, setfeeds] = useState([])
+  const userfeeds = useSelector((state) => state.userfeeds)
 
   const getfeeds = async () => {
 
@@ -42,9 +41,9 @@ const Screen = () => {
         return
       }
 
-      // dispatch(setfeeds(res))
-      setfeeds(res)
+      dispatch(setfeeds(res))
 
+      dispatch(getrefresh())
     } catch (error) {
       console.log("err", error);
     }

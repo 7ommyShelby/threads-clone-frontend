@@ -33,6 +33,7 @@ const Login = () => {
 
             if (res.token) {
                 localStorage.setItem("usertoken", res.token)
+                console.log("token stored");
                 dispatch(setstatus(true))
                 navigate('/')
             }
