@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import like from './actions/likehandler';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Editprofile from './Editprofile';
 
 const User = () => {
 
@@ -18,7 +19,7 @@ const User = () => {
     const navigate = useNavigate()
     const [posts, setposts] = useState([])
     const [user, setuser] = useState({})
-
+    const [edit, setedit] = useState(false)
     const dispatch = useDispatch()
 
     const getuser = async () => {
@@ -78,6 +79,8 @@ const User = () => {
         }
     }, [])
 
+    const [isOpen, setopen] = useState(false)
+
     return (
         <> {
             Object.keys(user).length !=0 && (
@@ -100,7 +103,9 @@ const User = () => {
                             </div>
                         </div>
                     </div>
-                    <button className='editpro w-full '>Edit profile</button>
+                        <Editprofile userid={user?._id}
+                                token={token}
+                        />          
                 </section>
 
                 <section className='threads py-4 gap-4 px-4 flex flex-col '>

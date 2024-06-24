@@ -3,12 +3,13 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import photo from '../assets/opp.jpg'
 import like from './actions/likehandler';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getrefresh } from './redux/slice';
+
 
 const Post = () => {
 
-const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
     const { id: postid } = useParams()
     const [postdata, setpostdata] = useState({})
@@ -22,14 +23,13 @@ const dispatch = useDispatch()
 
             setpostdata(res)
 
-            dispatch(getrefresh())
-
         } catch (error) {
             console.log(error);
         }
     }
 
     console.log(postdata);
+
     useEffect(() => {
         getpost(postid)
     }, [])
@@ -44,17 +44,19 @@ const dispatch = useDispatch()
                                 <img src={photo} alt="" />
                             </div>
                             <div className='flex gap-2 items-center py-2'>
-                                <h2 className="text-lg font-bold">{postdata.postedBy.username}</h2>
-                                <p className="text-gray-500 text-sm">{new Date(postdata.createdAt).toLocaleDateString('en-US')}</p>
+                                <h2 className="text-lg font-bold">{postdata?.postedBy?.username}</h2>
+                                <p className="text-gray-500 text-sm">{new Date(postdata?.createdAt).toLocaleDateString('en-US')}</p>
                             </div>
                         </div>
-                        <p className="pt-4">{postdata.text}</p>
+                        <p className="pt-4">{postdata?.text}</p>
                         <div className="flex items-center justify-between pt-4">
-                            <button onClick={()=>{
+                            <button onClick={() => {
+                                
                                 like(postdata._id)
+                                getpost(postid)
                             }} className="flex items-center">
                                 <span>👍</span>
-                                <span className="pl-2">{postdata.likes.length}</span>
+                                <span className="pl-2">{postdata?.likes?.length}</span>
                             </button>
                             <div className="flex space-x-4">
                                 <button>💬 Comment</button>
