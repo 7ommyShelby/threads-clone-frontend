@@ -87,12 +87,12 @@ const User = () => {
             <main className=' text-white'>
                 <section className='p-4'>
                     <div className="profile w-full px-4 py-6 flex gap-4 justify-between items-center">
-                        <div className="left flex flex-col gap-4">
+                        <div className="left flex flex-col gap-6">
                             <div>
                                 <h1 className='uppercase font-bold text-2xl tracking-[5px]'>{user?.name}</h1>
                                 <span className='lowercase'>{user?.username}</span>
                             </div>
-                            <div className='flex flex-col gap-6'>
+                            <div className='flex flex-col gap-2'>
                                 <p className="bio">{user?.bio}</p>
                                 <span>{user?.followers?.length} followers</span>
                             </div>

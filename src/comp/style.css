@@ -107,3 +107,10 @@
 .userpost::-webkit-scrollbar{
     display: none;
 }
+.updateprofile{
+    height: 80vh;
+    overflow-y: scroll;   
+}
+.updateprofile::-webkit-scrollbar{
+    display: none;
+}

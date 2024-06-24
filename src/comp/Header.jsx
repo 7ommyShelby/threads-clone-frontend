@@ -30,7 +30,7 @@ const Header = () => {
             <div className='pages'>
                 <ul className='text-white flex gap-2 items-center justify-center'>
                     <Link to={'/'}><li><GoHome /></li></Link>
-                    <li><FiSearch /></li>
+                    <Link to={'/search'}><li><FiSearch /></li></Link>
                     <li><IoCreateOutline /></li>
                     <li><FaRegHeart /></li>
                     <Link to={'user'}><li><BsPerson /></li></Link>

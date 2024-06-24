@@ -32,7 +32,7 @@ export default function Modal() {
       {showModal ? (
         <>
           <div
-            className="justify-center items-center flex  fixed inset-0 z-50 outline-none focus:outline-none"
+            className="justify-center items-center flex bg-black bg-opacity-75  fixed inset-0 z-50 outline-none focus:outline-none"
           >
             <div className="bg-black relative my-6 w-1/2  mx-auto max-w-3xl">
               <div className="bg-zinc-900  p-6 rounded-lg">

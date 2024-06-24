@@ -47,8 +47,8 @@ function Editprofile({ userid, token }) {
             </button>
 
             {isOpen && (
-                <div className="fixed inset-0  bg-opacity-100 flex justify-center items-center z-50">
-                    <div className="bg-zinc-900 p-6 rounded-xl shadow-lg w-2/5 border">
+                <div className="fixed inset-0 bg-black bg-opacity-85 flex justify-center items-center z-50">
+                    <div className="bg-zinc-900 updateprofile p-6 rounded-xl shadow-lg w-2/5 border">
                         <div className="flex justify-between items-center mb-4">
                             <h2 className="text-white text-2xl">Edit Profile</h2>
                             <button
@@ -140,6 +140,7 @@ function Editprofile({ userid, token }) {
                                 <button
                                     onClick={() => {
                                         edit(userid)
+                                        setIsOpen(false)
                                     }}
                                     type="submit"
                                     className="w-full p-4 bg-white text-black font-bold rounded-lg hover:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"

@@ -8,7 +8,7 @@ import Login from './comp/Login'
 import User from './comp/User'
 import { useSelector } from 'react-redux'
 import Post from './comp/Post'
-
+import Searchusers from './comp/Searchusers'
 
 function App() {
 
@@ -22,6 +22,7 @@ function App() {
             <Route path='' element={<Screen />} />
             <Route path='user' element={<User />} />
             <Route path='post/:id'  element={<Post/>}/>
+            <Route path='search'  element={<Searchusers/>}/>
           </Route>
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
