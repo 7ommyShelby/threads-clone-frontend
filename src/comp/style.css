@@ -114,3 +114,7 @@
 .updateprofile::-webkit-scrollbar{
     display: none;
 }
+
+.threads{
+    border-bottom: 0.5px solid #464646;
+}

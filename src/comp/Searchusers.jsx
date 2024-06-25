@@ -29,7 +29,7 @@ const Searchusers = () => {
         <>
             <div className="bg-zinc-900 text-white p-4">
                 {allusers.map((profile) => (
-                    <div key={profile?.username} className="mb-4">
+                    <div key={profile?.username} className="mb-4 border-b py-3 border-b-neutral-600">
                         <div className="flex items-center">
                             <span className="text-lg font-bold">{profile?.username}</span>
                         </div>

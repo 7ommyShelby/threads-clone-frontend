@@ -11,7 +11,7 @@ import like from '../comp/actions/likehandler'
 import Modal from './Postmodal';
 import reply from '../comp/actions/replies'
 import Profile from './Profile';
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -65,15 +65,18 @@ const Screen = () => {
               userfeeds.map((e) => {
                 return (
                   <>
-                    <section className='threads w-full py-4 px-4 flex gap-2 border-b'>
+                    <section className='threads w-full py-4 px-4 flex gap-2'>
                       <div className='feedpic'>
                         <img src={photo} alt="" />
                       </div>
-                      <div className='flex flex-col gap-4'>
-                        <div>
-                          <h3 className='lowercase font-semibold'>{e.postedBy.username}</h3><span></span>
-                        </div>
-                        <p>{e.text}</p>
+                      <div className='flex flex-col gap-5'>
+
+                        <Link to={`/post/${e._id}`}>
+                          <div className='flex gap-1 flex-col'>
+                            <h3 className='lowercase font-semibold'>{e.postedBy.username}</h3><span></span>
+                            <p className='text-sm font-light'>{e.text}</p>
+                          </div>
+                        </Link>
                         <div className='options'>
                           <ul className='flex gap-4 text-xl'>
                             <li onClick={() => {

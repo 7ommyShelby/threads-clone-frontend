@@ -70,6 +70,7 @@ const User = () => {
     console.log(posts);
 
     useEffect(() => {
+        getpost(user._id)
         getuser(dispatch)
         return () => {
             setposts([])
@@ -115,7 +116,7 @@ const User = () => {
                                 {
                                     posts.map((e, index) => (
 
-                                        <div key={index} className='flex gap-2 border-b py-1'>
+                                        <div key={index} className='threads flex gap-2 border-b py-1'>
                                             <div className='feedpic'>
                                                 <img src={photo} alt="" />
                                             </div>
