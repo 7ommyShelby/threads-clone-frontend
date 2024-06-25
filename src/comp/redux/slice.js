@@ -5,7 +5,7 @@ const initialState = {
     usertoken: localStorage.getItem('usertoken'),
     userfeeds: [],
     refresh: false,
-    userid : "" 
+    user : {} 
 }
 
 export const threadslice = createSlice({
@@ -28,8 +28,8 @@ export const threadslice = createSlice({
         getrefresh: (state) => {
             state.refresh = !state.refresh
         },
-        setuserid : (state, action)=>{
-            state.userid = action.payload
+        setuser : (state, action)=>{
+            state.user = action.payload
         }
     }
 })

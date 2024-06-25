@@ -4,49 +4,46 @@ import { PiHeartThin } from "react-icons/pi";
 import { HiOutlineChatBubbleOvalLeft } from "react-icons/hi2";
 import { TbSend } from "react-icons/tb";
 import { BiRepost } from "react-icons/bi";
-import { getrefresh } from './redux/slice';
-import { useDispatch } from 'react-redux';
+import { getrefresh,setuser } from './redux/slice';
+import { useDispatch, useSelector } from 'react-redux';
 import like from './actions/likehandler';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Editprofile from './Editprofile';
+import getuser from './actions/getuserdata';
+
+
 
 const User = () => {
 
-    console.log("hello");
     const token = localStorage.getItem("usertoken")
-
-    const navigate = useNavigate()
     const [posts, setposts] = useState([])
-    const [user, setuser] = useState({})
-    const [edit, setedit] = useState(false)
     const dispatch = useDispatch()
 
-    const getuser = async () => {
+    const user = useSelector((state)=>state.user)
 
-        try {
-            const loggeduser = await fetch('https://threads-clone-backend-2770.onrender.com/api/users/userinfo', {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: token,
-                }
-            })
+    // const getuser = async () => {
 
-            const res = await loggeduser.json();
+    //     try {
+    //         const loggeduser = await fetch('https://threads-clone-backend-2770.onrender.com/api/users/userinfo', {
+    //             method: "GET",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //                 Authorization: token,
+    //             }
+    //         })
 
-            getpost(res._id)
+    //         const res = await loggeduser.json();
 
-            localStorage.setItem("user", JSON.stringify(res))
+    //         getpost(res._id)
 
-            setuser(res)
+    //         localStorage.setItem("user", JSON.stringify(res))
+    //         dispatch(setuser(res))
 
-        } catch (error) {
-            console.log("err", error);
-        }
-    }
-
-    // const user = JSON.parse(localStorage.getItem("user"));
+    //     } catch (error) {
+    //         console.log("err", error);
+    //     }
+    // }
 
     console.log(user);
 
@@ -73,13 +70,11 @@ const User = () => {
     console.log(posts);
 
     useEffect(() => {
-        getuser()
+        getuser(dispatch)
         return () => {
             setposts([])
         }
     }, [])
-
-    const [isOpen, setopen] = useState(false)
 
     return (
         <> {
@@ -89,12 +84,15 @@ const User = () => {
                     <div className="profile w-full px-4 py-6 flex gap-4 justify-between items-center">
                         <div className="left flex flex-col gap-6">
                             <div>
-                                <h1 className='uppercase font-bold text-2xl tracking-[5px]'>{user?.name}</h1>
+                                <h1 className='font-bold text-2xl tracking-[5px]'>{user?.name}</h1>
                                 <span className='lowercase'>{user?.username}</span>
                             </div>
                             <div className='flex flex-col gap-2'>
                                 <p className="bio">{user?.bio}</p>
+                                <div className='flex gap-4'>
                                 <span>{user?.followers?.length} followers</span>
+                                <span>{user?.following?.length} following</span>
+                                </div>
                             </div>
                         </div>
                         <div className="right flex flex-col items-end">
