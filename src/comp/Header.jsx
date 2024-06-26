@@ -8,7 +8,7 @@ import { FaThreads } from "react-icons/fa6";
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import User from './User';
 import { useSelector, useDispatch } from 'react-redux';
-import { setstatus } from './redux/slice';
+import { setuser } from './redux/slice';
 
 const Header = () => {
 
@@ -18,7 +18,8 @@ const Header = () => {
 
 
     function logout() {
-        localStorage.removeItem('usertoken')
+        // localStorage.removeItem('usertoken')
+        localStorage.clear()
         navigate('/login')
     }
 
@@ -40,7 +41,10 @@ const Header = () => {
             <div className='flex gap-4'>
 
                 {
-                    status ? <button onClick={logout} className='bg-slate-50 rounded-md px-4 py-2 font-semibold'>Logout</button> : <Link to={'/login'}>
+                    status ? <button onClick={()=>{
+                        dispatch(setuser({}))
+                        logout()
+                    }} className='bg-slate-50 rounded-md px-4 py-2 font-semibold'>Logout</button> : <Link to={'/login'}>
                         <button className='bg-slate-50 rounded-md px-4 py-2 font-semibold'>Log in</button>
                     </Link>
                 }

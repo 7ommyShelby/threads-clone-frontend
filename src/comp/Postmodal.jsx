@@ -1,16 +1,16 @@
 import React from "react";
 import photo from '../assets/opp.jpg'
 import createpost from "./actions/createpost";
-
+import { useState } from "react";
 
 
 export default function Modal() {
 
   const user = JSON.parse(localStorage.getItem('user'))
 
-  const [text, settext] = React.useState("")
+  const [text, settext] = useState("")
 
-  const [showModal, setShowModal] = React.useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
@@ -18,7 +18,6 @@ export default function Modal() {
       <div onClick={() => { setShowModal(true) }} className="bg-zinc-900 px-4 py-6 rounded-lg flex items-center">
         <img src={photo} alt="User Avatar" className="rounded-full w-10 h-10 mr-4" />
         <input
-          value={text}
           type="text"
           placeholder="Start a thread..."
           className="flex-grow bg-transparent outline-none text-white placeholder-gray-400"
@@ -41,7 +40,6 @@ export default function Modal() {
                     <img src={photo} alt="" />
                   </div>
                   <input onChange={(e) => {
-                    
                     settext(e.target.value)
                   }}
                     type="text"
@@ -76,7 +74,7 @@ export default function Modal() {
                   }}>Discard</button>
                   <button
                     onClick={() => {
-                      createpost(user._id, text)
+                      createpost(user?._id, text)
                       settext("")
                       setShowModal(false)
                     }}

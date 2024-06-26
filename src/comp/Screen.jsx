@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { setstatus, setfeeds, getrefresh } from './redux/slice';
 import { PiHeartThin } from "react-icons/pi";
@@ -9,8 +8,6 @@ import { BiRepost } from "react-icons/bi";
 import photo from '../assets/opp.jpg'
 import like from '../comp/actions/likehandler'
 import Modal from './Postmodal';
-import reply from '../comp/actions/replies'
-import Profile from './Profile';
 import { Link } from 'react-router-dom';
 
 
@@ -43,7 +40,6 @@ const Screen = () => {
 
       dispatch(setfeeds(res))
 
-      dispatch(getrefresh())
     } catch (error) {
       console.log("err", error);
     }

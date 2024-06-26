@@ -13,21 +13,23 @@ const Signup = () => {
 
   const senddata = async () => {
 
+
     try {
-      const info = await fetch('https://threads-clone-backend-2770.onrender.com/api/users/signup', {
-        method : "POST",
+
+      const info = await fetch('http://localhost:10000/api/users/signup', {
+        method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            "name" : nameref.current.value,
-            "username" : usernameref.current.value,
-            "email" : emailref.current.value,
-            "password" : passwordref.current.value
+          "name": nameref.current.value,
+          "username": usernameref.current.value,
+          "email": emailref.current.value,
+          "password": passwordref.current.value
         }),
       })
       const res = await info.json()
-      
+
       console.log(res);
 
     }
@@ -42,15 +44,15 @@ const Signup = () => {
 
         <div className="w-full max-w-lg  p-4 pt-6 pb-8 bg-gray-900 rounded shadow-md flex flex-col items-center gap-4">
           <h2 className="text-2xl font-bold text-center mb-4">Sign Up</h2>
-          <form onSubmit={(e)=>{
+          <form onSubmit={(e) => {
             e.preventDefault();
-              senddata()
+            senddata()
             nameref.current.value = ""
-            usernameref.current.value =""
+            usernameref.current.value = ""
             emailref.current.value = ""
             passwordref.current.value = ""
           }}>
-          
+
             <div className="flex flex-wrap -mx-3 mb-6">
               <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="full_name">

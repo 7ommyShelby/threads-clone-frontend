@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import photo from '../assets/opp.jpg'
 import like from './actions/likehandler';
 import { useDispatch, useSelector } from 'react-redux';
-import { getrefresh } from './redux/slice';
+
 
 
 const Post = () => {

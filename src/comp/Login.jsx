@@ -3,6 +3,7 @@ import { Link, Navigate } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { setuser, setstatus } from './redux/slice'
+import getuser from './actions/getuserdata'
 
 const Login = () => {
 
@@ -37,7 +38,7 @@ const Login = () => {
                 dispatch(setstatus(true))
                 navigate('/')
             }
-            
+
             console.log("user", res);
 
         } catch (error) {
@@ -45,11 +46,6 @@ const Login = () => {
             alert("Something went wrong", error)
         }
     }
-    
-    useEffect(() => {
-        senddata();
-    }, [])
-
 
     console.log(userstatus);
 
@@ -61,10 +57,11 @@ const Login = () => {
                     <div className="form flex flex-col gap-2">
                         <input ref={emailref} type="text" placeholder='Email' />
                         <input ref={passwordref} type="text" placeholder='Password' />
-                        <button onClick={() => {
-                            senddata();
-                            emailref.current.value = ""
-                            passwordref.current.value = ""
+                        <button onClick={async () => {
+                            await senddata();
+                            // await getuser(dispatch)
+                            // emailref.current.value = ""
+                            // passwordref.current.value = ""
                         }} >Log in</button>
                     </div>
                     <p className='text-white'>Forgotten password?</p>
