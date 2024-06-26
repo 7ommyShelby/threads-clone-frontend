@@ -1,8 +1,32 @@
-# React + Vite
+# Threads Clone Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the frontend code for a Threads clone application. The frontend is built using modern web technologies to provide a seamless user experience.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Contributing](#contributing)
+- [License](#license)
+
+  # Usage
+
+After starting the development server, you can open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the application.
+
+## Features
+
+- **User Authentication**: Sign up, log in, and manage user accounts.
+- **User Profiles**: View and edit user profiles.
+- **Post Creation**: Create and share posts.
+- **Feed**: View a feed of posts from followed users.
+- **Post Interaction**: Like, reply to, and delete posts.
+- **Follow System**: Follow and unfollow other users.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
