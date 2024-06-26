@@ -14,39 +14,41 @@ import getuser from './actions/getuserdata';
 
 const User = () => {
 
-    const token = localStorage.getItem("usertoken")
 
     const [posts, setposts] = useState([])
+
     const dispatch = useDispatch()
 
     const user = useSelector((state) => state.user)
 
-    const getuser = async () => {
+    // const getuser = async () => {
 
-        try {
-            const loggeduser = await fetch('https://threads-clone-backend-2770.onrender.com/api/users/userinfo', {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: token,
-                }
-            })
+    //     try {
+    //         const loggeduser = await fetch('https://threads-clone-backend-2770.onrender.com/api/users/userinfo', {
+    //             method: "GET",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //                 Authorization: token,
+    //             }
+    //         })
 
-            const res = await loggeduser.json();
+    //         const res = await loggeduser.json();
 
-            getpost(res._id)
+    //         getpost(res._id)
 
-            localStorage.setItem("user", JSON.stringify(res))
-            dispatch(setuser(res))
+    //         localStorage.setItem("user", JSON.stringify(res))
+    //         dispatch(setuser(res))
 
-        } catch (error) {
-            console.log("err", error);
-        }
-    }
+    //     } catch (error) {
+    //         console.log("err", error);
+    //     }
+    // }
 
     console.log(user);
 
     async function getpost(loggeduserid) {
+
+        const token = localStorage.getItem("usertoken")
 
         try {
             const userpost = await fetch("https://threads-clone-backend-2770.onrender.com/api/posts/userposts/" + loggeduserid, {
@@ -67,12 +69,13 @@ const User = () => {
     }
 
     console.log(posts);
-
+    console.log(user);
+    
     useEffect(() => {
-        getuser()
+        // getuser()
         getpost(user._id)
 
-    }, [])
+    }, [user])
 
     return (
         <> {
@@ -100,7 +103,7 @@ const User = () => {
                             </div>
                         </div>
                         <Editprofile userid={user?._id}
-                            token={token}
+                        // token={token}
                         />
                     </section>
 

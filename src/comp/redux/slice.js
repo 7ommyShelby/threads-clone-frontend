@@ -8,11 +8,13 @@ const initialState = {
     user : {} 
 }
 
+
+
 export const threadslice = createSlice({
     name: "threads",
     initialState,
     reducers: {
-        setuser: (state, action) => {
+        setusertoken: (state, action) => {
             state.usertoken = action.payload
             localStorage.setItem('usertoken', action.payload);
         },
@@ -29,6 +31,7 @@ export const threadslice = createSlice({
             state.refresh = !state.refresh
         },
         setuser : (state, action)=>{
+            console.log(action.payload);
             state.user = action.payload
         }
     }

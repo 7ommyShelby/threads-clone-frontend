@@ -1,10 +1,8 @@
 import { setuser } from "../redux/slice"
 
-const token = localStorage.getItem("usertoken")
-
-console.log(token);
-
 const getuser = async (dispatch) => {
+
+    const token = localStorage.getItem("usertoken")
 
     try {
         const loggeduser = await fetch('https://threads-clone-backend-2770.onrender.com/api/users/userinfo', {
@@ -19,6 +17,8 @@ const getuser = async (dispatch) => {
 
         localStorage.setItem("user", JSON.stringify(res))
 
+        console.log(res);
+    
         dispatch(setuser(res))
 
     } catch (error) {

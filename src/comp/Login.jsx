@@ -59,7 +59,7 @@ const Login = () => {
                         <input ref={passwordref} type="text" placeholder='Password' />
                         <button onClick={async () => {
                             await senddata();
-                            // await getuser(dispatch)
+                            await getuser(dispatch)
                             // emailref.current.value = ""
                             // passwordref.current.value = ""
                         }} >Log in</button>

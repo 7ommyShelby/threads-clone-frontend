@@ -1,6 +1,6 @@
-const token = localStorage.getItem('usertoken')
 
 async function reply(id){
+  const token = localStorage.getItem('usertoken')
     try {
         const postreply = await fetch("https://threads-clone-backend-2770.onrender.com/api/posts/reply/" + id, {
             method: "POST",
@@ -17,6 +17,5 @@ async function reply(id){
         console.log(error);
     }
 } 
-
 
 export default reply

@@ -13,12 +13,13 @@ import { Link } from 'react-router-dom';
 
 
 const Screen = () => {
-  const token = localStorage.getItem("usertoken")
   const dispatch = useDispatch()
   const userfeeds = useSelector((state) => state.userfeeds)
-
+  const user = useSelector((state)=>state.user)
+  console.log(user);
   const getfeeds = async () => {
-
+    
+    const token = localStorage.getItem("usertoken")
     try {
       const feeds = await fetch("https://threads-clone-backend-2770.onrender.com/api/posts/feed", {
         method: "GET",
@@ -48,6 +49,8 @@ const Screen = () => {
   useEffect(() => {
     getfeeds()
   }, [])
+
+
 
   return (
     <>

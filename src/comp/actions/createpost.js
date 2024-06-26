@@ -1,7 +1,8 @@
-const token = localStorage.getItem('usertoken')
 
 const createpost = async (user, text) => {
 
+    const token = localStorage.getItem('usertoken')
+    
     try {
         const post = await fetch("https://threads-clone-backend-2770.onrender.com/api/posts/create", {
             method: "POST",
@@ -10,8 +11,8 @@ const createpost = async (user, text) => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                postedBy : user,
-                text : text
+                postedBy: user,
+                text: text
             })
         })
 

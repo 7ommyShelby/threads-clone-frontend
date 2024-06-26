@@ -1,10 +1,9 @@
-const token = localStorage.getItem('usertoken')
-
 
 const followhandler = async (targetid) => {
+    const token = localStorage.getItem('usertoken')
     try {
         const follow = await fetch("https://threads-clone-backend-2770.onrender.com/api/users/follow/" + targetid, {
-            method : "POST",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 Authorization: token
