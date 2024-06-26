@@ -1,6 +1,6 @@
 # Threads Clone Frontend
 
-This repository contains the frontend code for a Threads clone application. The frontend is built using modern web technologies to provide a seamless user experience.
+This repository contains the frontend code for a Threads clone application. The frontend is built using modern web technologies like React.js, Redux Toolkit, Tailwind CSS to provide a seamless user experience.
 
 ## Table of Contents
 
@@ -12,7 +12,7 @@ This repository contains the frontend code for a Threads clone application. The 
 
   # Usage
 
-After starting the development server, you can open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the application.
+After starting the development server, you can open your browser and navigate to [http://localhost:5173](http://localhost:5173) to view the application.
 
 ## Features
 
