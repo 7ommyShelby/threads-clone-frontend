@@ -16,7 +16,7 @@ const Signup = () => {
 
     try {
 
-      const info = await fetch('http://localhost:10000/api/users/signup', {
+      const info = await fetch('https://threads-clone-backend-2770.onrender.com/api/users/signup', {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
