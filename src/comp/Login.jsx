@@ -60,8 +60,6 @@ const Login = () => {
                         <button onClick={async () => {
                             await senddata();
                             await getuser(dispatch)
-                            // emailref.current.value = ""
-                            // passwordref.current.value = ""
                         }} >Log in</button>
                     </div>
                     <p className='text-white'>Forgotten password?</p>

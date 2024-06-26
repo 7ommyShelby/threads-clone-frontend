@@ -28,7 +28,7 @@ const Searchusers = () => {
 
     return (
         <>
-            <div className="bg-zinc-900 text-white p-4">
+            <div className="allusers bg-zinc-900 text-white p-4">
                 {allusers.map((profile) => (
                     <div key={profile?.username} className="mb-4 border-b py-3 border-b-neutral-600">
                         <div className="flex items-center">

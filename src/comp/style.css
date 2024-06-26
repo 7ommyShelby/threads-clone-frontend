@@ -118,3 +118,11 @@
 .threads{
     border-bottom: 0.5px solid #464646;
 }
+
+.allusers{
+    height: 600px;
+    overflow-y: scroll;
+}
+.allusers::-webkit-scrollbar{
+    display: none;
+}

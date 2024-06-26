@@ -72,10 +72,9 @@ const User = () => {
     console.log(user);
     
     useEffect(() => {
-        // getuser()
+        getuser(dispatch)
         getpost(user._id)
-
-    }, [user])
+    }, [])
 
     return (
         <> {

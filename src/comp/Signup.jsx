@@ -13,7 +13,6 @@ const Signup = () => {
 
   const senddata = async () => {
 
-
     try {
 
       const info = await fetch('https://threads-clone-backend-2770.onrender.com/api/users/signup', {
