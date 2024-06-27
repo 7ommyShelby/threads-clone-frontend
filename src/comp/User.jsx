@@ -44,14 +44,12 @@ const User = () => {
     //     }
     // }
 
-    console.log(user);
-
-    async function getpost(loggeduserid) {
+    async function getpost() {
 
         const token = localStorage.getItem("usertoken")
 
         try {
-            const userpost = await fetch("https://threads-clone-backend-2770.onrender.com/api/posts/userposts/" + loggeduserid, {
+            const userpost = await fetch("https://threads-clone-backend-2770.onrender.com/api/posts/userposts/" + user._id, {
                 method: "GET",
                 headers: {
                     Authorization: token,
@@ -74,7 +72,7 @@ const User = () => {
     useEffect(() => {
         async function getdata() {
             await getuser(dispatch)
-            await getpost(user._id)
+            await getpost()
         }
         getdata()
     }, [])

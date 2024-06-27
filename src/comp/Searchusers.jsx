@@ -14,15 +14,22 @@ const Searchusers = () => {
     const loggeduser = useSelector((state) => state.user);
 
     const getallusers = async () => {
-        const profiles = await fetch('https://threads-clone-backend-2770.onrender.com/api/users/getusers')
-        const res = await profiles.json();
-        console.log(res);
-        setallusers(res);
+        try {
+            const profiles = await fetch('https://threads-clone-backend-2770.onrender.com/api/users/getusers')
+            const res = await profiles.json();
+            console.log(res);
+            setallusers(res);
+
+        } catch (error) {
+            console.log(error);
+        }
+
     }
 
     console.log(loggeduser);
 
-    useEffect( () => {
+    useEffect(() => {
+    
         getallusers();
     }, [])
 
