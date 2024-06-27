@@ -49,7 +49,7 @@ const User = () => {
         const token = localStorage.getItem("usertoken")
 
         try {
-            const userpost = await fetch("https://threads-clone-backend-2770.onrender.com/api/posts/userposts/" + user._id, {
+            const userpost = await fetch("https://threads-clone-backend-2770.onrender.com/api/posts/userposts/" + user?._id, {
                 method: "GET",
                 headers: {
                     Authorization: token,

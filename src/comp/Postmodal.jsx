@@ -74,7 +74,7 @@ export default function Modal() {
                   }}>Discard</button>
                   <button
                     onClick={ async () => {
-                     await createpost(user?._id, text)
+                     await createpost(text)
                       settext("")
                       setShowModal(false)
                     }}
