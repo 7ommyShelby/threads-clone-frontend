@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-function Editprofile({ userid, }) {
+function Editprofile({ userid }) {
 
     const [isOpen, setIsOpen] = useState(false);
 

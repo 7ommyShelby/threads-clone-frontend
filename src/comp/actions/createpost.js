@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 
 const createpost = async (text) => {
     
-    const user  = useSelector((state)=>state.user)
-    
+    const user  = JSON.parse(localStorage.getItem('user'))._id
+
     const token = localStorage.getItem('usertoken')
     
     try {
