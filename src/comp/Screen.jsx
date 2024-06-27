@@ -73,7 +73,7 @@ const Screen = () => {
                         <Link to={`/post/${e._id}`}>
                           <div className='flex gap-1 flex-col'>
                             <h3 className='lowercase font-semibold'>{e.postedBy.username}</h3><span></span>
-                            <p className='text-sm font-light'>{e.text}</p>
+                            <p className='text-sm font-normal text-gray-500'>{e.text}</p>
                           </div>
                         </Link>
                         <div className='options'>

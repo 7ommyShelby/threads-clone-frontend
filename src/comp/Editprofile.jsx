@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-function Editprofile({ userid, token }) {
+function Editprofile({ userid, }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const nameref = useRef()
@@ -11,6 +11,8 @@ function Editprofile({ userid, token }) {
     const bioref = useRef()
 
     const edit = async (id) => {
+
+        const token = localStorage.getItem("usertoken")
 
         try {
             const update = await fetch("https://threads-clone-backend-2770.onrender.com/api/users/update/" + id, {
