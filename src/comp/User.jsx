@@ -70,10 +70,13 @@ const User = () => {
 
     console.log(posts);
     console.log(user);
-    
+
     useEffect(() => {
-        getuser(dispatch)
-        getpost(user._id)
+        async function getdata() {
+            await getuser(dispatch)
+            await getpost(user._id)
+        }
+        getdata()
     }, [])
 
     return (
@@ -102,7 +105,7 @@ const User = () => {
                             </div>
                         </div>
                         <Editprofile userid={user?._id}
-                        
+
                         />
                     </section>
 
