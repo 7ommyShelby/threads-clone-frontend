@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 
 function Editprofile({ userid, }) {
+
     const [isOpen, setIsOpen] = useState(false);
 
     const nameref = useRef()
@@ -140,8 +141,8 @@ function Editprofile({ userid, }) {
                             </div>
                             <div className="flex justify-center">
                                 <button
-                                    onClick={() => {
-                                        edit(userid)
+                                    onClick={ async () => {
+                                       await edit(userid)
                                         setIsOpen(false)
                                     }}
                                     type="submit"

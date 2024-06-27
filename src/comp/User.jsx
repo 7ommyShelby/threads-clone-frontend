@@ -103,7 +103,6 @@ const User = () => {
                             </div>
                         </div>
                         <Editprofile userid={user?._id}
-
                         />
                     </section>
 
